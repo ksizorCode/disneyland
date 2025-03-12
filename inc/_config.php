@@ -10,9 +10,9 @@
 const DEBUG= true;
 
 // DATOS
+const URL = "http://disneyland.local/disneyland";
 const SITENAME= "Disneyland DB";
 const LANG= "es";
-const URL = "http://localhost:8080";
 
 const DATOS = [
     'direccion' => 'Calle 123',
