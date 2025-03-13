@@ -10,7 +10,7 @@
 const DEBUG= true;
 
 // DATOS
-const URL = "http://disneyland.local/disneyland";
+const URL = "http://localhost:10119/disneyland/";
 const SITENAME= "Disneyland DB";
 const LANG= "es";
 
@@ -31,7 +31,7 @@ const DATOS = [
 const MENU = [
     [
         'texto' => 'Inicio',
-        'url'   => '/', 
+        'url'   => '', 
         'clase' => '',
         'target' => 0
     ],
@@ -42,8 +42,8 @@ const MENU = [
         'target' => 0
     ],
     [
-        'texto' => 'Log In',
-        'url'   => 'logIn.php', 
+        'texto' => 'Instalación',
+        'url'   => 'install.php', 
         'clase' => '',
         'target' => 0
     ]
@@ -58,7 +58,7 @@ function construirMenu($array=MENU, $nav=true)
     $miHTML = '<ul>';
     foreach($array as $item)
     {
-        $miHTML .= "<li><a href='{$item['url']}' target='{$item['target']}' class='{$item['clase']}'>{$item['texto']}</a></li>";
+        $miHTML .= "<li><a href='".URL."{$item['url']}' target='{$item['target']}' class='{$item['clase']}'>{$item['texto']}</a></li>";
     }
     $miHTML .= '</ul>';
 
@@ -151,21 +151,32 @@ const DBNA = 'disneylanddb';
 // $consulta = consulta($sql, 1) // si queremos que nos devuelva un valor almacenamos el valor en una variable y le pasamos el segundo parametro true o 1
 
 function consulta($sql, $devolver=false){
-    // Crear conexión
+     // Crear conexión
     $conn = mysqli_connect(HOST, USER, PASS, DBNA);
     // Verificar conexión
     if (!$conn){
-    die("Conexión fallida: " . mysqli_connect_error());
+        die("Conexión fallida: " . mysqli_connect_error());
     }
 
-    if($devolver){
-        return mysqli_query($conn, $sql);
+    
+ $resultado = mysqli_query($conn, $sql);
+ 
+ if($devolver){
+     $array_resultados = [];
+     
+     if($resultado && mysqli_num_rows($resultado) > 0) {
+         while($fila = mysqli_fetch_assoc($resultado)) {
+             $array_resultados[] = $fila;
+         }
+     }
+     
+     return $array_resultados;
     }
     else{
-        mysqli_query($conn, $sql);
+        return $resultado;
     }
-
-    //cerrar conexión
+    
     mysqli_close($conn);
+
 }
 

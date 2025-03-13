@@ -2,7 +2,7 @@
 </main> 
         <footer>
             <?php echo construirMenu(); ?>
-            <p>&copy;Copyright <?=SITENAME?> <?=date('Y')?> </p>
+            <p>&copy; Copyright <?=SITENAME?> <?=date('Y')?> </p>
         </footer>       
     </body>
 </html>
