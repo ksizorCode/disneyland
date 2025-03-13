@@ -1,0 +1,1001 @@
+{
+  "tables": [
+    {
+      "id": 0,
+      "name": "complejo",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "id": 0,
+          "name": "id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": false,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": 1,
+          "name": "nombre",
+          "type": "VARCHAR(100)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "name": "lugar",
+          "type": "VARCHAR(100)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 3,
+          "name": "descripcion",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 4,
+          "name": "gps",
+          "type": "VARCHAR(50)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": 812.3556734933813,
+      "y": -235.82466175678115
+    },
+    {
+      "id": 1,
+      "name": "parque",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "id": 0,
+          "name": "id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": false,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": 1,
+          "name": "nombre",
+          "type": "VARCHAR(100)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "name": "id_complejo",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 3,
+          "name": "descripcion",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 4,
+          "name": "mapa",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 5,
+          "name": "anio",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": -142.69536467400246,
+      "y": -293.6641842083895
+    },
+    {
+      "id": 2,
+      "name": "atraccion",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "id": 0,
+          "name": "id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": false,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": 1,
+          "name": "nombre",
+          "type": "VARCHAR(100)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "name": "foto",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 3,
+          "name": "video_pov",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 4,
+          "name": "descripcion",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 5,
+          "name": "longitud_gps",
+          "type": "VARCHAR(50)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 6,
+          "name": "latitud_gps",
+          "type": "VARCHAR(50)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": 257.9783649298339,
+      "y": -33.62543031828318
+    },
+    {
+      "id": 3,
+      "name": "tipo",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "id": 0,
+          "name": "id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": false,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": 1,
+          "name": "nombre",
+          "type": "VARCHAR(100)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "name": "descripcion",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 3,
+          "name": "icono",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": 985.6215587623906,
+      "y": 158.31186170967123
+    },
+    {
+      "id": 4,
+      "name": "zonaparque",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "id": 0,
+          "name": "id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": false,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": 1,
+          "name": "nombre",
+          "type": "VARCHAR(100)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "name": "descripcion",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 3,
+          "name": "icono",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": -354.91453386651995,
+      "y": 432.4491022564699
+    },
+    {
+      "id": 5,
+      "name": "tematica",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "id": 0,
+          "name": "id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": false,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": 1,
+          "name": "nombre",
+          "type": "VARCHAR(100)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "name": "descripcion",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 3,
+          "name": "icono",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": 577.4562749764951,
+      "y": 604.0933678764285
+    },
+    {
+      "id": 6,
+      "name": "hoteles",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "id": 0,
+          "name": "id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": false,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": 1,
+          "name": "nombre",
+          "type": "VARCHAR(100)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "name": "estrellas",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 3,
+          "name": "descripcion",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 4,
+          "name": "fotos",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": 1595.2369801775385,
+      "y": -288.8327729915345
+    },
+    {
+      "id": 7,
+      "name": "_complejo_parque",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "id": 0,
+          "name": "id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": false,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": 1,
+          "name": "id_complejo",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "name": "id_parque",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": 1578,
+      "y": 389
+    },
+    {
+      "id": 8,
+      "name": "_atraccion_parque",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "id": 0,
+          "name": "id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": false,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": 1,
+          "name": "id_atraccion",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "name": "id_parque",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": 1324,
+      "y": 389
+    },
+    {
+      "id": 9,
+      "name": "_atraccion_zonaparque",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "id": 0,
+          "name": "id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": false,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": 1,
+          "name": "id_atraccion",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "name": "id_zonaparque",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": -67.88803358874861,
+      "y": 154.62433936529237
+    },
+    {
+      "id": 10,
+      "name": "_atraccion_tipo",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "id": 0,
+          "name": "id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": false,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": 1,
+          "name": "id_atraccion",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "name": "id_tipo",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": 622.3752867620635,
+      "y": 82.68083377096542
+    },
+    {
+      "id": 11,
+      "name": "_atraccion_tematica",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "id": 0,
+          "name": "id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": false,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": 1,
+          "name": "id_atraccion",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "name": "id_tematica",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": 319.42358221449877,
+      "y": 327.84609647471314
+    },
+    {
+      "id": 12,
+      "name": "_zonaparque_tematica",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "id": 0,
+          "name": "id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": false,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": 1,
+          "name": "id_zonaparque",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "name": "id_tematica",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": 81.05558847244572,
+      "y": 531.2050864646975
+    },
+    {
+      "id": 13,
+      "name": "_complejo_hoteles",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "id": 0,
+          "name": "id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": false,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": 1,
+          "name": "id_complejo",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": 2,
+          "name": "id_hoteles",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [],
+      "x": 1244.2310700143564,
+      "y": -258.6674379017734
+    }
+  ],
+  "relationships": [
+    {
+      "name": "fk_complejo_id_parque",
+      "startTableId": 0,
+      "endTableId": 1,
+      "endFieldId": 2,
+      "startFieldId": 0,
+      "id": 0,
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "one_to_many"
+    },
+    {
+      "name": "fk_complejo_id__complejo_parque",
+      "startTableId": 0,
+      "endTableId": 7,
+      "endFieldId": 1,
+      "startFieldId": 0,
+      "id": 1,
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "one_to_many"
+    },
+    {
+      "name": "fk_parque_id__complejo_parque",
+      "startTableId": 1,
+      "endTableId": 7,
+      "endFieldId": 2,
+      "startFieldId": 0,
+      "id": 2,
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "one_to_many"
+    },
+    {
+      "name": "fk_atraccion_id__atraccion_parque",
+      "startTableId": 2,
+      "endTableId": 8,
+      "endFieldId": 1,
+      "startFieldId": 0,
+      "id": 3,
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "one_to_many"
+    },
+    {
+      "name": "fk_parque_id__atraccion_parque",
+      "startTableId": 1,
+      "endTableId": 8,
+      "endFieldId": 2,
+      "startFieldId": 0,
+      "id": 4,
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "one_to_many"
+    },
+    {
+      "name": "fk_atraccion_id__atraccion_zonaparque",
+      "startTableId": 2,
+      "endTableId": 9,
+      "endFieldId": 1,
+      "startFieldId": 0,
+      "id": 5,
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "one_to_many"
+    },
+    {
+      "name": "fk_zonaparque_id__atraccion_zonaparque",
+      "startTableId": 4,
+      "endTableId": 9,
+      "endFieldId": 2,
+      "startFieldId": 0,
+      "id": 6,
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "one_to_many"
+    },
+    {
+      "name": "fk_atraccion_id__atraccion_tipo",
+      "startTableId": 2,
+      "endTableId": 10,
+      "endFieldId": 1,
+      "startFieldId": 0,
+      "id": 7,
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "one_to_many"
+    },
+    {
+      "name": "fk_tipo_id__atraccion_tipo",
+      "startTableId": 3,
+      "endTableId": 10,
+      "endFieldId": 2,
+      "startFieldId": 0,
+      "id": 8,
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "one_to_many"
+    },
+    {
+      "name": "fk_atraccion_id__atraccion_tematica",
+      "startTableId": 2,
+      "endTableId": 11,
+      "endFieldId": 1,
+      "startFieldId": 0,
+      "id": 9,
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "one_to_many"
+    },
+    {
+      "name": "fk_tematica_id__atraccion_tematica",
+      "startTableId": 5,
+      "endTableId": 11,
+      "endFieldId": 2,
+      "startFieldId": 0,
+      "id": 10,
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "one_to_many"
+    },
+    {
+      "name": "fk_zonaparque_id__zonaparque_tematica",
+      "startTableId": 4,
+      "endTableId": 12,
+      "endFieldId": 1,
+      "startFieldId": 0,
+      "id": 11,
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "one_to_many"
+    },
+    {
+      "name": "fk_tematica_id__zonaparque_tematica",
+      "startTableId": 5,
+      "endTableId": 12,
+      "endFieldId": 2,
+      "startFieldId": 0,
+      "id": 12,
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "one_to_many"
+    },
+    {
+      "name": "fk_complejo_id__complejo_hoteles",
+      "startTableId": 0,
+      "endTableId": 13,
+      "endFieldId": 1,
+      "startFieldId": 0,
+      "id": 13,
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "one_to_many"
+    },
+    {
+      "name": "fk_hoteles_id__complejo_hoteles",
+      "startTableId": 6,
+      "endTableId": 13,
+      "endFieldId": 2,
+      "startFieldId": 0,
+      "id": 14,
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "one_to_many"
+    }
+  ],
+  "notes": [],
+  "subjectAreas": [],
+  "database": "mysql",
+  "title": "Untitled Diagram"
+}

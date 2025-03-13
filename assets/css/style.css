@@ -30,7 +30,7 @@ a{
 }
 
 header, main, footer{
-    padding: 20px;
+    padding: 16px 20px;
     border-radius: 20px;
     background-color: white;
     margin:0 0 20px 0;
@@ -40,8 +40,17 @@ header nav ul,
 footer nav ul{
     list-style: none;
     padding-left: 0;
-    
     display: flex;
     gap:10px;
+    margin: 0;
+}
 
+header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo{
+    font-weight:bold;
 }

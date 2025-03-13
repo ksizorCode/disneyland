@@ -1,0 +1,101 @@
+// Tablas principales
+
+Table complejo {
+  id         int [pk, increment]
+  nombre     varchar(100)
+  lugar      varchar(100)
+  descripcion text
+  gps        varchar(50)
+}
+
+Table parque {
+  id           int [pk, increment]
+  nombre       varchar(100)
+  id_complejo  int [ref: > complejo.id] // on delete set null (ver nota)
+  descripcion  text
+  mapa         text
+  anio         int
+}
+
+Table atraccion {
+  id           int [pk, increment]
+  nombre       varchar(100)
+  foto         text
+  video_pov    text
+  descripcion  text
+  longitud_gps varchar(50)
+  latitud_gps  varchar(50)
+}
+
+Table tipo {
+  id          int [pk, increment]
+  nombre      varchar(100)
+  descripcion text
+  icono       text
+}
+
+Table zonaparque {
+  id          int [pk, increment]
+  nombre      varchar(100)
+  descripcion text
+  icono       text
+}
+
+Table tematica {
+  id          int [pk, increment]
+  nombre      varchar(100)
+  descripcion text
+  icono       text
+}
+
+Table hoteles {
+  id          int [pk, increment]
+  nombre      varchar(100)
+  estrellas   int
+  descripcion text
+  fotos       text
+}
+
+// Tablas de relaciones
+
+Table _complejo_parque {
+  id          int [pk, increment]
+  id_complejo int [ref: > complejo.id]
+  id_parque   int [ref: > parque.id]
+}
+
+Table _atraccion_parque {
+  id          int [pk, increment]
+  id_atraccion int [ref: > atraccion.id]
+  id_parque    int [ref: > parque.id]
+}
+
+Table _atraccion_zonaparque {
+  id           int [pk, increment]
+  id_atraccion int [ref: > atraccion.id]
+  id_zonaparque int [ref: > zonaparque.id]
+}
+
+Table _atraccion_tipo {
+  id          int [pk, increment]
+  id_atraccion int [ref: > atraccion.id]
+  id_tipo      int [ref: > tipo.id]
+}
+
+Table _atraccion_tematica {
+  id          int [pk, increment]
+  id_atraccion int [ref: > atraccion.id]
+  id_tematica  int [ref: > tematica.id]
+}
+
+Table _zonaparque_tematica {
+  id           int [pk, increment]
+  id_zonaparque int [ref: > zonaparque.id]
+  id_tematica   int [ref: > tematica.id]
+}
+
+Table _complejo_hoteles {
+  id          int [pk, increment]
+  id_complejo int [ref: > complejo.id]
+  id_hoteles  int [ref: > hoteles.id]
+}

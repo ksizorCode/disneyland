@@ -1,149 +1,148 @@
-
 -- Crear la base de datos y seleccionarla
-create database if not exists disneylanddb;
-use disneylanddb;
+CREATE DATABASE IF NOT EXISTS disneylanddb;
+USE disneylanddb;
 
--------------------------------------------------
+-- -------------------------------------------------
 -- Tablas principales
--------------------------------------------------
+-- -------------------------------------------------
 
 -- Tabla: complejo
-create table complejo (
-    id int primary key auto_increment,
-    nombre varchar(100) not null,
-    lugar varchar(100),
-    descripcion text,
-    gps varchar(50)
+CREATE TABLE complejo (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    lugar VARCHAR(100),
+    descripcion TEXT,
+    gps VARCHAR(50)
 );
 
--- Tabla: parque
-create table parque (
-    id int primary key auto_increment,
-    nombre varchar(100) not null,
-    id_complejo int,
-    descripcion text,
-    mapa text,
-    anio int,
-    foreign key (id_complejo) references complejo(id) on delete set null
+-- Tabla: parque (debe crearse después de complejo, pues usa su clave foránea)
+CREATE TABLE parque (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    id_complejo INT,
+    descripcion TEXT,
+    mapa TEXT,
+    anio INT,
+    FOREIGN KEY (id_complejo) REFERENCES complejo(id) ON DELETE SET NULL
 );
 
 -- Tabla: atraccion
-create table atraccion (
-    id int primary key auto_increment,
-    nombre varchar(100) not null,
-    foto text,
-    video_pov text,
-    descripcion text,
-    longitud_gps varchar(50),
-    latitud_gps varchar(50)
+CREATE TABLE atraccion (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    foto TEXT,
+    video_pov TEXT,
+    descripcion TEXT,
+    longitud_gps VARCHAR(50),
+    latitud_gps VARCHAR(50)
 );
 
 -- Tabla: tipo
-create table tipo (
-    id int primary key auto_increment,
-    nombre varchar(100) not null,
-    descripcion text,
-    icono text
+CREATE TABLE tipo (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion TEXT,
+    icono TEXT
 );
 
 -- Tabla: zonaparque
-create table zonaparque (
-    id int primary key auto_increment,
-    nombre varchar(100) not null,
-    descripcion text,
-    icono text
+CREATE TABLE zonaparque (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion TEXT,
+    icono TEXT
 );
 
 -- Tabla: tematica
-create table tematica (
-    id int primary key auto_increment,
-    nombre varchar(100) not null,
-    descripcion text,
-    icono text
+CREATE TABLE tematica (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion TEXT,
+    icono TEXT
 );
 
 -- Tabla: hoteles
-create table hoteles (
-    id int primary key auto_increment,
-    nombre varchar(100) not null,
-    estrellas int,
-    descripcion text,
-    fotos text
+CREATE TABLE hoteles (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    estrellas INT,
+    descripcion TEXT,
+    fotos TEXT
 );
 
--------------------------------------------------
--- Tablas de relaciones (nombres con guión bajo al inicio)
--------------------------------------------------
+-- -------------------------------------------------
+-- Tablas de relaciones
+-- -------------------------------------------------
 
--- Tabla: _complejo_parque
-create table _complejo_parque (
-    id int primary key auto_increment,
-    id_complejo int,
-    id_parque int,
-    foreign key (id_complejo) references complejo(id) on delete cascade,
-    foreign key (id_parque) references parque(id) on delete cascade
+-- Tabla: _complejo_parque (referencia a complejo y parque)
+CREATE TABLE _complejo_parque (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_complejo INT,
+    id_parque INT,
+    FOREIGN KEY (id_complejo) REFERENCES complejo(id) ON DELETE CASCADE,
+    FOREIGN KEY (id_parque) REFERENCES parque(id) ON DELETE CASCADE
 );
 
--- Tabla: _atraccion_parque
-create table _atraccion_parque (
-    id int primary key auto_increment,
-    id_atraccion int,
-    id_parque int,
-    foreign key (id_atraccion) references atraccion(id) on delete cascade,
-    foreign key (id_parque) references parque(id) on delete cascade
+-- Tabla: _atraccion_parque (referencia a atraccion y parque)
+CREATE TABLE _atraccion_parque (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_atraccion INT,
+    id_parque INT,
+    FOREIGN KEY (id_atraccion) REFERENCES atraccion(id) ON DELETE CASCADE,
+    FOREIGN KEY (id_parque) REFERENCES parque(id) ON DELETE CASCADE
 );
 
--- Tabla: _atraccion_zonaparque
-create table _atraccion_zonaparque (
-    id int primary key auto_increment,
-    id_atraccion int,
-    id_zonaparque int,
-    foreign key (id_atraccion) references atraccion(id) on delete cascade,
-    foreign key (id_zonaparque) references zonaparque(id) on delete cascade
+-- Tabla: _atraccion_zonaparque (referencia a atraccion y zonaparque)
+CREATE TABLE _atraccion_zonaparque (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_atraccion INT,
+    id_zonaparque INT,
+    FOREIGN KEY (id_atraccion) REFERENCES atraccion(id) ON DELETE CASCADE,
+    FOREIGN KEY (id_zonaparque) REFERENCES zonaparque(id) ON DELETE CASCADE
 );
 
--- Tabla: _atraccion_tipo
-create table _atraccion_tipo (
-    id int primary key auto_increment,
-    id_atraccion int,
-    id_tipo int,
-    foreign key (id_atraccion) references atraccion(id) on delete cascade,
-    foreign key (id_tipo) references tipo(id) on delete cascade
+-- Tabla: _atraccion_tipo (referencia a atraccion y tipo)
+CREATE TABLE _atraccion_tipo (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_atraccion INT,
+    id_tipo INT,
+    FOREIGN KEY (id_atraccion) REFERENCES atraccion(id) ON DELETE CASCADE,
+    FOREIGN KEY (id_tipo) REFERENCES tipo(id) ON DELETE CASCADE
 );
 
--- Tabla: _atraccion_tematica
-create table _atraccion_tematica (
-    id int primary key auto_increment,
-    id_atraccion int,
-    id_tematica int,
-    foreign key (id_atraccion) references atraccion(id) on delete cascade,
-    foreign key (id_tematica) references tematica(id) on delete cascade
+-- Tabla: _atraccion_tematica (referencia a atraccion y tematica)
+CREATE TABLE _atraccion_tematica (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_atraccion INT,
+    id_tematica INT,
+    FOREIGN KEY (id_atraccion) REFERENCES atraccion(id) ON DELETE CASCADE,
+    FOREIGN KEY (id_tematica) REFERENCES tematica(id) ON DELETE CASCADE
 );
 
--- Tabla: _zonaparque_tematica
-create table _zonaparque_tematica (
-    id int primary key auto_increment,
-    id_zonaparque int,
-    id_tematica int,
-    foreign key (id_zonaparque) references zonaparque(id) on delete cascade,
-    foreign key (id_tematica) references tematica(id) on delete cascade
+-- Tabla: _zonaparque_tematica (referencia a zonaparque y tematica)
+CREATE TABLE _zonaparque_tematica (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_zonaparque INT,
+    id_tematica INT,
+    FOREIGN KEY (id_zonaparque) REFERENCES zonaparque(id) ON DELETE CASCADE,
+    FOREIGN KEY (id_tematica) REFERENCES tematica(id) ON DELETE CASCADE
 );
 
--- Tabla: _complejo_hoteles
-create table _complejo_hoteles (
-    id int primary key auto_increment,
-    id_complejo int,
-    id_hoteles int,
-    foreign key (id_complejo) references complejo(id) on delete cascade,
-    foreign key (id_hoteles) references hoteles(id) on delete cascade
+-- Tabla: _complejo_hoteles (referencia a complejo y hoteles)
+CREATE TABLE _complejo_hoteles (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_complejo INT,
+    id_hoteles INT,
+    FOREIGN KEY (id_complejo) REFERENCES complejo(id) ON DELETE CASCADE,
+    FOREIGN KEY (id_hoteles) REFERENCES hoteles(id) ON DELETE CASCADE
 );
 
--------------------------------------------------
+-- -------------------------------------------------
 -- Inserción de contenidos
--------------------------------------------------
+-- -------------------------------------------------
 
 -- Inserción en complejo
-insert into complejo (id, nombre, lugar, descripcion, gps) values
+INSERT INTO complejo (id, nombre, lugar, descripcion, gps) VALUES
 (1, 'disneyland resort', 'anaheim, california, usa', 'el primer complejo de disney, inaugurado en 1955.', '33.8121,-117.9190'),
 (2, 'walt disney world resort', 'orlando, florida, usa', 'complejo turístico con varios parques temáticos y hoteles.', '28.3852,-81.5639'),
 (3, 'disneyland paris', 'marne-la-vallée, francia', 'parque temático europeo inaugurado en 1992.', '48.8708,2.7832'),
@@ -153,7 +152,7 @@ insert into complejo (id, nombre, lugar, descripcion, gps) values
 (7, 'disney adventure resort', 'orlando, florida, usa', 'complejo ficticio para nuevas experiencias de aventura.', '28.4500,-81.2000');
 
 -- Inserción en parque
-insert into parque (id, nombre, id_complejo, descripcion, mapa, anio) values
+INSERT INTO parque (id, nombre, id_complejo, descripcion, mapa, anio) VALUES
 (1, 'disneyland park', 1, 'el parque original con atracciones clásicas.', 'link_a_mapa', 1955),
 (2, 'disney california adventure', 1, 'parque temático de aventuras y diversión.', 'link_a_mapa', 2001),
 (3, 'magic kingdom', 2, 'el parque temático más famoso de walt disney world.', 'link_a_mapa', 1971),
@@ -169,7 +168,7 @@ insert into parque (id, nombre, id_complejo, descripcion, mapa, anio) values
 (13, 'disney adventure park', 7, 'parque temático de aventura y exploración, parte del nuevo complejo disney adventure resort.', 'link_a_mapa', 2023);
 
 -- Inserción en atraccion
-insert into atraccion (id, nombre, foto, video_pov, descripcion, longitud_gps, latitud_gps) values
+INSERT INTO atraccion (id, nombre, foto, video_pov, descripcion, longitud_gps, latitud_gps) VALUES
 (1, 'big thunder mountain railroad', 'link_foto_btm', 'link_video_btm', 'montaña rusa ambientada en una mina abandonada.', '-117.9200', '33.8125'),
 (2, 'haunted mansion', 'link_foto_hm', 'link_video_hm', 'casa encantada con fantasmas y efectos especiales.', '-117.9210', '33.8127'),
 (3, 'space mountain', 'link_foto_sm', 'link_video_sm', 'montaña rusa en la oscuridad con temática espacial.', '-117.9220', '33.8129'),
@@ -181,14 +180,14 @@ insert into atraccion (id, nombre, foto, video_pov, descripcion, longitud_gps, l
 (9, 'seven dwarfs mine train', 'link_foto_sdmt', 'link_video_sdmt', 'montaña rusa familiar basada en la historia de los siete enanitos.', '-117.9280', '33.8135');
 
 -- Inserción en tipo
-insert into tipo (id, nombre, descripcion, icono) values
+INSERT INTO tipo (id, nombre, descripcion, icono) VALUES
 (1, 'montaña rusa', 'atracción con recorrido en rieles y velocidad.', 'icono_montana.png'),
 (2, 'simulado', 'atracción basada en simulación de experiencias.', 'icono_simulado.png'),
 (3, 'indoor', 'atracción ubicada en espacios cerrados.', 'icono_indoor.png'),
 (4, 'paseo', 'atracción de recorrido lento y escénico.', 'icono_paseo.png');
 
 -- Inserción en zonaparque
-insert into zonaparque (id, nombre, descripcion, icono) values
+INSERT INTO zonaparque (id, nombre, descripcion, icono) VALUES
 (1, 'main street, usa', 'zona de entrada inspirada en una ciudad americana de principios del siglo xx.', 'mainstreet.png'),
 (2, 'frontierland', 'zona con temática del viejo oeste y aventuras de pioneros.', 'frontierland.png'),
 (3, 'tomorrowland', 'zona futurista con tecnología avanzada y visión del mañana.', 'tomorrowland.png'),
@@ -196,7 +195,7 @@ insert into zonaparque (id, nombre, descripcion, icono) values
 (5, 'fantasyland', 'zona inspirada en cuentos de hadas y mundos mágicos.', 'fantasyland.png');
 
 -- Inserción en tematica
-insert into tematica (id, nombre, descripcion, icono) values
+INSERT INTO tematica (id, nombre, descripcion, icono) VALUES
 (1, 'pirata', 'temática basada en aventuras de piratas y el mar.', 'pirata.png'),
 (2, 'fantasma', 'temática de terror y espíritus enigmáticos.', 'fantasma.png'),
 (3, 'infantil', 'temática orientada a los más pequeños, colorida y lúdica.', 'infantil.png'),
@@ -204,7 +203,7 @@ insert into tematica (id, nombre, descripcion, icono) values
 (5, 'aventura', 'temática de exploración y desafíos en entornos exóticos.', 'aventura.png');
 
 -- Inserción en hoteles
-insert into hoteles (id, nombre, estrellas, descripcion, fotos) values
+INSERT INTO hoteles (id, nombre, estrellas, descripcion, fotos) VALUES
 (1, 'disneyland hotel', 5, 'hotel de lujo ubicado en disneyland resort, con decoración temática y servicio exclusivo.', 'link_foto_hotel1'),
 (2, 'disney\'s grand californian hotel & spa', 5, 'hotel de alta gama en disneyland resort, con acceso directo a los parques.', 'link_foto_hotel2'),
 (3, 'disney\'s contemporary resort', 4, 'hotel con vista al magic kingdom en walt disney world, moderno y elegante.', 'link_foto_hotel3'),
@@ -213,12 +212,12 @@ insert into hoteles (id, nombre, estrellas, descripcion, fotos) values
 (6, 'disney ambassador hotel', 4, 'hotel ubicado en tokyo disney resort, que ofrece una experiencia única y cultural.', 'link_foto_hotel6'),
 (7, 'disney adventure resort hotel', 5, 'hotel exclusivo en el nuevo complejo disney adventure resort.', 'link_foto_hotel7');
 
--------------------------------------------------
+-- -------------------------------------------------
 -- Inserción en tablas de relaciones
--------------------------------------------------
+-- -------------------------------------------------
 
 -- Tabla: _complejo_parque
-insert into _complejo_parque (id, id_complejo, id_parque) values
+INSERT INTO _complejo_parque (id, id_complejo, id_parque) VALUES
 (1, 1, 1),
 (2, 1, 2),
 (3, 2, 3),
@@ -234,7 +233,7 @@ insert into _complejo_parque (id, id_complejo, id_parque) values
 (13, 7, 13);
 
 -- Tabla: _atraccion_parque
-insert into _atraccion_parque (id, id_atraccion, id_parque) values
+INSERT INTO _atraccion_parque (id, id_atraccion, id_parque) VALUES
 (1, 1, 1),
 (2, 2, 1),
 (3, 3, 3),
@@ -246,7 +245,7 @@ insert into _atraccion_parque (id, id_atraccion, id_parque) values
 (9, 9, 3);
 
 -- Tabla: _atraccion_zonaparque
-insert into _atraccion_zonaparque (id, id_atraccion, id_zonaparque) values
+INSERT INTO _atraccion_zonaparque (id, id_atraccion, id_zonaparque) VALUES
 (1, 1, 2),
 (2, 2, 5),
 (3, 3, 3),
@@ -258,7 +257,7 @@ insert into _atraccion_zonaparque (id, id_atraccion, id_zonaparque) values
 (9, 9, 5);
 
 -- Tabla: _atraccion_tipo
-insert into _atraccion_tipo (id, id_atraccion, id_tipo) values
+INSERT INTO _atraccion_tipo (id, id_atraccion, id_tipo) VALUES
 (1, 1, 1),
 (2, 2, 3),
 (3, 3, 1),
@@ -270,7 +269,7 @@ insert into _atraccion_tipo (id, id_atraccion, id_tipo) values
 (9, 9, 1);
 
 -- Tabla: _atraccion_tematica
-insert into _atraccion_tematica (id, id_atraccion, id_tematica) values
+INSERT INTO _atraccion_tematica (id, id_atraccion, id_tematica) VALUES
 (1, 1, 5),
 (2, 2, 2),
 (3, 3, 4),
@@ -282,7 +281,7 @@ insert into _atraccion_tematica (id, id_atraccion, id_tematica) values
 (9, 9, 3);
 
 -- Tabla: _zonaparque_tematica
-insert into _zonaparque_tematica (id, id_zonaparque, id_tematica) values
+INSERT INTO _zonaparque_tematica (id, id_zonaparque, id_tematica) VALUES
 (1, 1, 3),
 (2, 2, 1),
 (3, 3, 4),
@@ -290,7 +289,7 @@ insert into _zonaparque_tematica (id, id_zonaparque, id_tematica) values
 (5, 5, 3);
 
 -- Tabla: _complejo_hoteles
-insert into _complejo_hoteles (id, id_complejo, id_hoteles) values
+INSERT INTO _complejo_hoteles (id, id_complejo, id_hoteles) VALUES
 (1, 1, 1),
 (2, 1, 2),
 (3, 2, 3),

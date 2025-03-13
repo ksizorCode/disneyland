@@ -1,0 +1,8 @@
+# Habilitar mod_rewrite y establecer la base de reescritura
+RewriteEngine On
+RewriteBase /
+
+# Definir la página de error 404 personalizada
+ErrorDocument 404 disneyland/error404.html
+
+
