@@ -4,5 +4,3 @@ RewriteBase /
 
 # Definir la página de error 404 personalizada
 ErrorDocument 404 disneyland/error404.html
-
-
