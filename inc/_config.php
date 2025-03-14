@@ -3,14 +3,12 @@
 // DATOS
 
 
-
-
-
 // Modo desarrollo 
 const DEBUG= true;
 
 // DATOS
-const URL = "http://localhost:10119/disneyland/";
+const URL = "http://disneyland.local/disneyland/";
+//const URL = "http://localhost:10119/disneyland/";
 const SITENAME= "Disneyland DB";
 const LANG= "es";
 
