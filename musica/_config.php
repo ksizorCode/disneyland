@@ -176,7 +176,7 @@ function conectaBaseDatos($tabla,$id = null){
                           foreach ($albums as $album) {
                               $html .= "<h2>Álbum: {$album['nombre_disco']} (ID Disco: {$album['id_disco']})</h2>";
                               $html .= "<img src='img/{$album['portada']}'>";
-                              $html .= "<p>Artista: {$album['nombre_artista']} (ID Artista: {$album['id_artista']})</p>";
+                              $html .= "<p>Artista: <a href='ficha.php?id={$album['id_artista']}&tabla=artistas'>{$album['nombre_artista']}</a> (ID Artista: {$album['id_artista']})</p>";
                               $html .= "<h3>Canciones:</h3>";
                               if (!empty($album['canciones'])) {
                                   $html .= "<ul>";
