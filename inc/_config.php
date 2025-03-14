@@ -7,8 +7,8 @@
 const DEBUG= 1;
 
 // DATOS
-const URL = "http://disneyland.local/disneyland/";
-//const URL = "http://localhost:10119/disneyland/";
+//const URL = "http://disneyland.local/disneyland/";
+const URL = "http://localhost:10119/disneyland/";
 const SITENAME= "Disneyland DB";
 const LANG= "es";
 
