@@ -87,9 +87,9 @@ function conectaBaseDatos($tabla,$id = null){
                     case "canciones":
                         echo "<h1>{$row['nombre_cancion']}</h1>
                         <p>Duracion:   {$row['duracion']}</p>
-                        <p>Album:      {$row['nombre_disco']}</p>
+                        <p>Album:      <a href='ficha.php?id={$row['id_disco']}&tabla=discos'>{$row['nombre_disco']}</a></p>
                         <p>Portada:    {$row['portada']}</p>
-                        <p>Artista:    {$row['nombre_artista']}</p>
+                        <p>Artista:    <a href='ficha.php?id={$row['id_artista']}&tabla=artistas'>{$row['nombre_artista']}</a></p>
                         <p>Año:        {$row['anio_disco']}</p>
                         <p>ID Canción: {$row['id_cancion']}</p>
                         <p>ID Disco:   {$row['id_disco']}</p>
@@ -138,7 +138,7 @@ function conectaBaseDatos($tabla,$id = null){
                             $html .= "<h2>Álbum: {$album['nombre_disco']} ({$album['anio_disco']})</h2>";
                             $html .= "<ul>";
                             foreach ($album['canciones'] as $cancion) {
-                                $html .= "<li>{$cancion['nombre_cancion']} (Duración: {$cancion['duracion']}, ID Canción: {$cancion['id_cancion']})</li>";
+                                $html .= "<li><a href='ficha.php?id={$cancion['id_cancion']}&tabla=canciones'>{$cancion['nombre_cancion']}</a> (Duración: {$cancion['duracion']}, ID Canción: {$cancion['id_cancion']})</li>";
                             }
                             $html .= "</ul>";
                         }
@@ -181,7 +181,7 @@ function conectaBaseDatos($tabla,$id = null){
                               if (!empty($album['canciones'])) {
                                   $html .= "<ul>";
                                   foreach ($album['canciones'] as $cancion) {
-                                      $html .= "<li>{$cancion['nombre_cancion']} (ID Canción: {$cancion['id_cancion']})</li>";
+                                      $html .= "<li><a href='ficha.php?id={$cancion['id_cancion']}&tabla=canciones   '>{$cancion['nombre_cancion']}</a> (ID Canción: {$cancion['id_cancion']})</li>";
                                   }
                                   $html .= "</ul>";
                               } else {
@@ -218,7 +218,7 @@ function conectaBaseDatos($tabla,$id = null){
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
 </head>
 <body>
   

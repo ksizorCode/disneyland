@@ -1,3 +1,7 @@
+:root{
+    --c1:#0177a9;
+}
+
 body{
     width: min(100%, 1200px);
     margin-inline: auto;
@@ -7,8 +11,7 @@ body{
 }
 
 a{
-    text-decoration: none;
-    color: #575757;
+    color: var(--c1);
 }
 
 a:hover{
