@@ -4,7 +4,7 @@
 
 
 // Modo desarrollo 
-const DEBUG= true;
+const DEBUG= 1;
 
 // DATOS
 const URL = "http://disneyland.local/disneyland/";
@@ -22,8 +22,6 @@ const DATOS = [
 ];
 
 // voy a hacer un array con los elementos para el menu de redes sociales
-
-
 
 
 const MENU = [
@@ -68,7 +66,6 @@ function construirMenu($array=MENU, $nav=true)
 }
 
 
-
 //Función que se asegura de sanitizar el código
 // $algo = '<h1>Hola Mundo</h1>';
 // limpiar($algo)
@@ -81,46 +78,38 @@ function slug($aSluguear){
 
 }
 
-
 function formConstructor(){}
-
-
 
 
 // FUNCIÓN PARA EL TÍTULO SI CUENTA CON TÍTULO DE PAARTADO LO ESCRIBE Y SI NO, ESCRIBE EL APARTADO DE LA WEB
 function titulo($ponerSiteTitulo=true)
 {
-    if(defined('TITULO'))
-    {
-        echo TITULO;
-    }
+    global $titulo;
+    if(isset($titulo)){        echo $titulo;    }
 
-    if(defined('TITULO')&&$ponerSiteTitulo)
-    {
-    echo " - ";
-    }
+    if(isset($titulo)&&$ponerSiteTitulo){ echo " - "; }
     
-    if($ponerSiteTitulo)
-    {
+    if($ponerSiteTitulo){
         echo SITENAME;
     }
 
-    if(!defined("TITULO"))
-    {
+    if(!isset($titulo)){
     debug("titulo no definido");
     }
 }
 
 // Escribe texto en modo desarrollo
-function debug($texto, $contenedor=false)
+function debug($texto, $contenedor = false)
 {
-    if(DEBUG)
-    {
-        $miHTML= "$texto";
-        if($contenedor){
-            $miHTML = "<div class='debug'>$miHTML</div>";
+    if (DEBUG) {
+        // Elimina espacios y tabulaciones al inicio de cada línea
+        $texto = preg_replace('/^\s+/m', '', $texto);
+        
+        $miHTML = $texto;
+        if ($contenedor) {
+            $miHTML = "<pre class='debug'>$miHTML</pre>";
         }
-
+        
         echo $miHTML;
     }
 }
@@ -178,3 +167,73 @@ function consulta($sql, $devolver=false){
 
 }
 
+
+
+//DEBUG
+function printR($array){
+    if(DEBUG){
+        echo '<pre class="debug">';
+        print_r($array);
+        echo '</pre>';
+    }
+}
+
+
+// Construir en formato JSON
+function JSON($array){
+    // Se muestra el resultado en formato JSON
+    $json = json_encode($array, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    echo "<h3>Resultado en JSON</h3>";
+    echo "<pre>$json</pre>";
+}
+
+
+
+
+// FORMATEAR FECHA
+// Función que convierte una fecha en formato "YYYY-MM-DD" a "Día de Mes de Año"
+function convertirFecha($fecha) {
+    // Arreglos de traducción para días y meses
+    $dias = array(
+        'Sunday'    => 'Domingo',
+        'Monday'    => 'Lunes',
+        'Tuesday'   => 'Martes',
+        'Wednesday' => 'Miércoles',
+        'Thursday'  => 'Jueves',
+        'Friday'    => 'Viernes',
+        'Saturday'  => 'Sábado'
+    );
+    $meses = array(
+        '01' => 'Enero',
+        '02' => 'Febrero',
+        '03' => 'Marzo',
+        '04' => 'Abril',
+        '05' => 'Mayo',
+        '06' => 'Junio',
+        '07' => 'Julio',
+        '08' => 'Agosto',
+        '09' => 'Septiembre',
+        '10' => 'Octubre',
+        '11' => 'Noviembre',
+        '12' => 'Diciembre'
+    );
+    
+    // Creamos el objeto DateTime
+    $fechaObj = new DateTime($fecha);
+    
+    // Obtenemos cada parte de la fecha
+    $diaSemanaEn = $fechaObj->format('l'); // Nombre del día en inglés
+    $diaSemana = isset($dias[$diaSemanaEn]) ? $dias[$diaSemanaEn] : $diaSemanaEn;
+    
+    $dia = $fechaObj->format('d');  // Día con dos dígitos (ej. "15")
+    $mesNum = $fechaObj->format('m'); // Mes numérico "01", "02", etc.
+    $mesEsp = isset($meses[$mesNum]) ? $meses[$mesNum] : $mesNum;
+    
+    $anio = $fechaObj->format('Y');
+    
+    // Retornamos la fecha formateada según lo solicitado
+    return "{$diaSemana} {$dia} de {$mesEsp} de {$anio}";
+}
+
+// Ejemplo de uso:
+//echo convertirFecha("1975-01-15"); // Salida: Martes 15 de Enero de 1975
