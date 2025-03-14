@@ -215,63 +215,63 @@ INSERT INTO atraccion (nombre, foto, video_pov, descripcion, inauguracion, longi
   ('Jungle Cruise', 'jungle_cruise.jpg', 'jungle_cruise.mp4', 'Recorrido en bote por ríos exóticos y selvas misteriosas.', '1971-10-01', '28.3867', '-81.5637'),
   ('Big Thunder Mountain Railroad', 'big_thunder.jpg', 'big_thunder.mp4', 'Montaña rusa en una mina del viejo oeste.', '1980-09-15', '28.3868', '-81.5638'),
   ('Country Bear Jamboree', 'bears.jpg', 'bears.mp4', 'Espectáculo musical con osos animados.', '1971-10-01', '28.3869', '-81.5639'),
-  ('Haunted Mansion', 'haunted_mansion.jpg', 'haunted_mansion.mp4', 'Recorrido por una mansión encantada llena de fantasmas.', '1971-10-01', '28.3870', '-81.5640');
+  ('Haunted Mansion', 'haunted_mansion.jpg', 'haunted_mansion.mp4', 'Recorrido por una mansión encantada llena de fantasmas.', '1971-10-01', '28.3870', '-81.5640'),
   
   -- EPCOT
-  ('Guardians of the Galaxy: Cosmic Rewind', 'cosmic_rewind.jpg', 'cosmic_rewind.mp4', 'Atracción de simulación con héroes espaciales.', '28.3871', '-81.5641'),
-  ('Frozen Ever After', 'frozen.jpg', 'frozen.mp4', 'Paseo musical inspirado en la película Frozen.', '28.3872', '-81.5642'),
-  ('Remy''s Ratatouille Adventure', 'ratatouille.jpg', 'ratatouille.mp4', 'Aventura en miniatura en la cocina de un gran chef.', '28.3873', '-81.5643'),
-
+  ('Guardians of the Galaxy: Cosmic Rewind', 'cosmic_rewind.jpg', 'cosmic_rewind.mp4', 'Atracción de simulación con héroes espaciales.', '2022-05-27', '28.3871', '-81.5641'),
+  ('Frozen Ever After', 'frozen.jpg', 'frozen.mp4', 'Paseo musical inspirado en la película Frozen.', '2016-04-20', '28.3872', '-81.5642'),
+  ('Remy''s Ratatouille Adventure', 'ratatouille.jpg', 'ratatouille.mp4', 'Aventura en miniatura en la cocina de un gran chef.', '2021-10-01', '28.3873', '-81.5643'),
+  
   -- Hollywood Studios
-  ('Millennium Falcon: Smugglers Run', 'falcon.jpg', 'falcon.mp4', 'Simulador a bordo del legendario Halcón Milenario.', '28.3874', '-81.5644'),
-  ('Star Wars: Rise of the Resistance', 'rise_resistance.jpg', 'rise_resistance.mp4', 'Experiencia inmersiva en el universo de Star Wars.', '28.3875', '-81.5645'),
-  ('Slinky Dog Dash', 'slinky_dog.jpg', 'slinky_dog.mp4', 'Montaña rusa familiar inspirada en Toy Story.', '28.3876', '-81.5646'),
-  ('Toy Story Mania!', 'toy_story_mania.jpg', 'toy_story_mania.mp4', 'Competencia interactiva en un mundo de juguetes.', '28.3877', '-81.5647'),
-  ('The Twilight Zone Tower of Terror', 'tower_of_terror.jpg', 'tower_of_terror.mp4', 'Caída libre en un hotel embrujado.', '28.3878', '-81.5648'),
-  ('Rock ''n'' Roller Coaster', 'rock_roller.jpg', 'rock_roller.mp4', 'Montaña rusa musical a alta velocidad.', '28.3879', '-81.5649'),
-
+  ('Millennium Falcon: Smugglers Run', 'falcon.jpg', 'falcon.mp4', 'Simulador a bordo del legendario Halcón Milenario.', '2017-05-31', '28.3874', '-81.5644'),
+  ('Star Wars: Rise of the Resistance', 'rise_resistance.jpg', 'rise_resistance.mp4', 'Experiencia inmersiva en el universo de Star Wars.', '2019-12-05', '28.3875', '-81.5645'),
+  ('Slinky Dog Dash', 'slinky_dog.jpg', 'slinky_dog.mp4', 'Montaña rusa familiar inspirada en Toy Story.', '2018-06-23', '28.3876', '-81.5646'),
+  ('Toy Story Mania!', 'toy_story_mania.jpg', 'toy_story_mania.mp4', 'Competencia interactiva en un mundo de juguetes.', '2008-05-31', '28.3877', '-81.5647'),
+  ('The Twilight Zone Tower of Terror', 'tower_of_terror.jpg', 'tower_of_terror.mp4', 'Caída libre en un hotel embrujado.', '1994-07-22', '28.3878', '-81.5648'),
+  ('Rock ''n'' Roller Coaster', 'rock_roller.jpg', 'rock_roller.mp4', 'Montaña rusa musical a alta velocidad.', '2001-10-10', '28.3879', '-81.5649'),
+  
   -- Animal Kingdom
-  ('Avatar Flight of Passage', 'avatar_flight.jpg', 'avatar_flight.mp4', 'Simulador que te lleva a volar sobre Pandora.', '28.3880', '-81.5650'),
-  ('Na''vi River Journey', 'navi_river.jpg', 'navi_river.mp4', 'Paseo en bote por los ríos de Pandora.', '28.3881', '-81.5651'),
-  ('Expedition Everest', 'expedition_everest.jpg', 'expedition_everest.mp4', 'Montaña rusa en una expedición por el Himalaya.', '28.3882', '-81.5652'),
-  ('Kali River Rapids', 'kali_rapids.jpg', 'kali_rapids.mp4', 'Aventura acuática en rápidos salvajes.', '28.3883', '-81.5653'),
-  ('Kilimanjaro Safaris', 'safari.jpg', 'safari.mp4', 'Recorrido en vehículo por una sabana africana.', '28.3884', '-81.5654'),
-  ('Festival of the Lion King', 'lion_king.jpg', 'lion_king.mp4', 'Espectáculo en vivo con música y personajes.', '28.3885', '-81.5655'),
-
+  ('Avatar Flight of Passage', 'avatar_flight.jpg', 'avatar_flight.mp4', 'Simulador que te lleva a volar sobre Pandora.', '2017-05-27', '28.3880', '-81.5650'),
+  ('Na''vi River Journey', 'navi_river.jpg', 'navi_river.mp4', 'Paseo en bote por los ríos de Pandora.', '2017-05-27', '28.3881', '-81.5651'),
+  ('Expedition Everest', 'expedition_everest.jpg', 'expedition_everest.mp4', 'Montaña rusa en una expedición por el Himalaya.', '2006-04-07', '28.3882', '-81.5652'),
+  ('Kali River Rapids', 'kali_rapids.jpg', 'kali_rapids.mp4', 'Aventura acuática en rápidos salvajes.', '1998-04-22', '28.3883', '-81.5653'),
+  ('Kilimanjaro Safaris', 'safari.jpg', 'safari.mp4', 'Recorrido en vehículo por una sabana africana.', '1998-04-22', '28.3884', '-81.5654'),
+  ('Festival of the Lion King', 'lion_king.jpg', 'lion_king.mp4', 'Espectáculo en vivo con música y personajes.', '1998-06-15', '28.3885', '-81.5655'),
+  
   -- Disneyland Resort – Disneyland Park
-  ('Space Mountain', 'dl_space_mountain.jpg', 'dl_space_mountain.mp4', 'Versión del clásico recorrido espacial en Disneyland.', '33.8122', '-117.9191'),
-  ('Star Tours', 'star_tours.jpg', 'star_tours.mp4', 'Simulador de vuelo en el universo de Star Wars.', '33.8123', '-117.9192'),
-  ('Indiana Jones Adventure', 'indiana_jones.jpg', 'indiana_jones.mp4', 'Aventura arqueológica en templos antiguos.', '33.8124', '-117.9193'),
-  ('Haunted Mansion', 'dl_haunted_mansion.jpg', 'dl_haunted_mansion.mp4', 'Recorrido por una mansión encantada con efectos sorprendentes.', '33.8125', '-117.9194'),
-  ('Pirates of the Caribbean', 'dl_pirates.jpg', 'dl_pirates.mp4', 'Aventura pirata en alta mar.', '33.8126', '-117.9195'),
-  ('Millennium Falcon: Smugglers Run', 'dl_falcon.jpg', 'dl_falcon.mp4', 'Simulador en el Halcón Milenario versión Disneyland.', '33.8127', '-117.9196'),
-  ('Rise of the Resistance', 'dl_rise.jpg', 'dl_rise.mp4', 'Experiencia inmersiva en el universo Star Wars.', '33.8128', '-117.9197'),
-
+  ('Space Mountain', 'dl_space_mountain.jpg', 'dl_space_mountain.mp4', 'Versión del clásico recorrido espacial en Disneyland.', '1977-05-27', '33.8122', '-117.9191'),
+  ('Star Tours', 'star_tours.jpg', 'star_tours.mp4', 'Simulador de vuelo en el universo de Star Wars.', '1987-01-09', '33.8123', '-117.9192'),
+  ('Indiana Jones Adventure', 'indiana_jones.jpg', 'indiana_jones.mp4', 'Aventura arqueológica en templos antiguos.', '1995-03-03', '33.8124', '-117.9193'),
+  ('Haunted Mansion', 'dl_haunted_mansion.jpg', 'dl_haunted_mansion.mp4', 'Recorrido por una mansión encantada con efectos sorprendentes.', '1969-08-09', '33.8125', '-117.9194'),
+  ('Pirates of the Caribbean', 'dl_pirates.jpg', 'dl_pirates.mp4', 'Aventura pirata en alta mar.', '1967-03-18', '33.8126', '-117.9195'),
+  ('Millennium Falcon: Smugglers Run', 'dl_falcon.jpg', 'dl_falcon.mp4', 'Simulador en el Halcón Milenario versión Disneyland.', '2020-03-31', '33.8127', '-117.9196'),
+  ('Rise of the Resistance', 'dl_rise.jpg', 'dl_rise.mp4', 'Experiencia inmersiva en el universo Star Wars.', '2023-01-20', '33.8128', '-117.9197'),
+  
   -- Disney California Adventure
-  ('Web Slingers: A Spider-Man Adventure', 'spiderman.jpg', 'spiderman.mp4', 'Aventura interactiva con Spider-Man.', '33.8129', '-117.9198'),
-  ('Radiator Springs Racers', 'radiator_springs.jpg', 'radiator_springs.mp4', 'Competencia en la famosa Ruta 66.', '33.8130', '-117.9199'),
-  ('Incredicoaster', 'incredicoaster.jpg', 'incredicoaster.mp4', 'Montaña rusa inspirada en los Increíbles.', '33.8131', '-117.9200'),
-  ('Toy Story Mania!', 'dlca_toy_story.jpg', 'dlca_toy_story.mp4', 'Juego interactivo basado en Toy Story.', '33.8132', '-117.9201'),
-
+  ('Web Slingers: A Spider-Man Adventure', 'spiderman.jpg', 'spiderman.mp4', 'Aventura interactiva con Spider-Man.', '2021-10-17', '33.8129', '-117.9198'),
+  ('Radiator Springs Racers', 'radiator_springs.jpg', 'radiator_springs.mp4', 'Competencia en la famosa Ruta 66.', '2012-06-15', '33.8130', '-117.9199'),
+  ('Incredicoaster', 'incredicoaster.jpg', 'incredicoaster.mp4', 'Montaña rusa inspirada en los Increíbles.', '2018-03-20', '33.8131', '-117.9200'),
+  ('Toy Story Mania!', 'dlca_toy_story.jpg', 'dlca_toy_story.mp4', 'Juego interactivo basado en Toy Story.', '2009-10-20', '33.8132', '-117.9201'),
+  
   -- Disneyland Paris
-  ('Star Wars Hyperspace Mountain', 'dp_hyperspace.jpg', 'dp_hyperspace.mp4', 'Montaña rusa con temática de Star Wars.', '48.8701', '2.7801'),
-  ('Pirates of the Caribbean', 'dp_pirates.jpg', 'dp_pirates.mp4', 'Aventura pirata en Disneyland Paris.', '48.8702', '2.7802'),
-  ('Avengers Assemble: Flight Force', 'dp_avengers.jpg', 'dp_avengers.mp4', 'Simulador basado en los Avengers.', '48.8703', '2.7803'),
-  ('Ratatouille: The Adventure', 'dp_ratatouille.jpg', 'dp_ratatouille.mp4', 'Aventura en miniatura por las cocinas de París.', '48.8704', '2.7804'),
-
+  ('Star Wars Hyperspace Mountain', 'dp_hyperspace.jpg', 'dp_hyperspace.mp4', 'Montaña rusa con temática de Star Wars.', '2017-03-26', '48.8701', '2.7801'),
+  ('Pirates of the Caribbean', 'dp_pirates.jpg', 'dp_pirates.mp4', 'Aventura pirata en Disneyland Paris.', '1992-04-12', '48.8702', '2.7802'),
+  ('Avengers Assemble: Flight Force', 'dp_avengers.jpg', 'dp_avengers.mp4', 'Simulador basado en los Avengers.', '2022-07-15', '48.8703', '2.7803'),
+  ('Ratatouille: The Adventure', 'dp_ratatouille.jpg', 'dp_ratatouille.mp4', 'Aventura en miniatura por las cocinas de París.', '2014-07-01', '48.8704', '2.7804'),
+  
   -- Tokyo Disney Resort
-  ('Space Mountain', 'td_space_mountain.jpg', 'td_space_mountain.mp4', 'Versión de Space Mountain para Tokyo Disneyland.', '35.6330', '139.8805'),
-  ('Buzz Lightyear''s Astro Blasters', 'buzz.jpg', 'buzz.mp4', 'Aventura interactiva con Buzz Lightyear.', '35.6331', '139.8806'),
-  ('Journey to the Center of the Earth', 'journey.jpg', 'journey.mp4', 'Simulador de expedición subterránea.', '35.6332', '139.8807'),
-  ('Indiana Jones Adventure', 'td_indiana.jpg', 'td_indiana.mp4', 'Aventura arqueológica en Tokyo DisneySea.', '35.6333', '139.8808'),
-
+  ('Space Mountain', 'td_space_mountain.jpg', 'td_space_mountain.mp4', 'Versión de Space Mountain para Tokyo Disneyland.', '1983-04-15', '35.6330', '139.8805'),
+  ('Buzz Lightyear''s Astro Blasters', 'buzz.jpg', 'buzz.mp4', 'Aventura interactiva con Buzz Lightyear.', '1983-04-15', '35.6331', '139.8806'),
+  ('Journey to the Center of the Earth', 'journey.jpg', 'journey.mp4', 'Simulador de expedición subterránea.', '2001-09-04', '35.6332', '139.8807'),
+  ('Indiana Jones Adventure', 'td_indiana.jpg', 'td_indiana.mp4', 'Aventura arqueológica en Tokyo DisneySea.', '2001-09-04', '35.6333', '139.8808'),
+  
   -- Hong Kong Disneyland
-  ('Mystic Manor', 'mystic_manor.jpg', 'mystic_manor.mp4', 'Recorrido misterioso en una mansión encantada.', '22.3129', '114.0420'),
-  ('Iron Man Experience', 'iron_man.jpg', 'iron_man.mp4', 'Simulador a bordo de la armadura de Iron Man.', '22.3130', '114.0421'),
-
+  ('Mystic Manor', 'mystic_manor.jpg', 'mystic_manor.mp4', 'Recorrido misterioso en una mansión encantada.', '2005-09-12', '22.3129', '114.0420'),
+  ('Iron Man Experience', 'iron_man.jpg', 'iron_man.mp4', 'Simulador a bordo de la armadura de Iron Man.', '2016-11-12', '22.3130', '114.0421'),
+  
   -- Shanghai Disney Resort
-  ('TRON Lightcycle Power Run', 'tron_shanghai.jpg', 'tron_shanghai.mp4', 'Montaña rusa futurista basada en TRON.', '31.1426', '121.6611'),
-  ('Pirates of the Caribbean: Battle for the Sunken Treasure', 'sh_pirates.jpg', 'sh_pirates.mp4', 'Aventura acuática en busca de tesoros hundidos.', '31.1427', '121.6612');
+  ('TRON Lightcycle Power Run', 'tron_shanghai.jpg', 'tron_shanghai.mp4', 'Montaña rusa futurista basada en TRON.', '2016-05-16', '31.1426', '121.6611'),
+  ('Pirates of the Caribbean: Battle for the Sunken Treasure', 'sh_pirates.jpg', 'sh_pirates.mp4', 'Aventura acuática en busca de tesoros hundidos.', '2016-06-16', '31.1427', '121.6612');
 
 
 
