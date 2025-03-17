@@ -73,7 +73,7 @@ function conectaBaseDatos($tabla,$id = null){
         }
 
         else{
-        $sql = "SELECT * FROM $tabla";  
+        $sql = "SELECT * FROM $tabla ORDER BY nombre ASC";  
         }
 
       $result = mysqli_query($conn, $sql);
