@@ -32,7 +32,12 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "SELECT * FROM evento WHERE DATE(fecha_ini) = '$dia'";
+//$sql = "SELECT * FROM evento WHERE DATE(fecha_ini) = '$dia'"; // contempla solo eventos que sean hoy y no tengan una duración semanal 
+$sql = "SELECT *
+FROM evento
+WHERE '$dia' >= fecha_ini
+  AND ('$dia' <= fecha_fin OR fecha_fin IS NULL)
+  OR DATE(fecha_ini)='$dia';";
 $result = mysqli_query($conn, $sql);
 
 
